@@ -1,6 +1,6 @@
 # Compte Rendu - TP6 : Gestion Automatisée des Droits d'Accès
 
-**Auteur :** [Votre nom]  
+**Auteur :** Maxime, Antoine et JM
 **Date :** 19 janvier 2026
 
 ---
