@@ -61,3 +61,6 @@ Chaque projet doit contenir un fichier avec le statut : `ACTIVE` ou `CLOSED`
 ## Logs
 
 Les logs sont générés dans `logs/` avec le format : `log_YYYYMMDD_HHMMSS.txt`
+
+## Crontab 
+0 7 * * * /home/debian/script.sh
