@@ -1,0 +1,463 @@
+﻿################################################################################
+#                    RAPPORT DE GESTION DES DROITS D'ACCÃˆS                     #
+#                    Date d'exÃ©cution: 2026-01-19 11:20:18                      #
+#                    Mode: SIMULATION                                          #
+################################################################################
+
+================================================================================
+[2026-01-19 11:20:18] TRAITEMENT
+================================================================================
+Projet        : ProjectA
+Statut projet : ACTIVE
+Utilisateur   : grace
+RÃ´le effectif : MANAGER
+
+DROITS APPLIQUÃ‰S:
+  - data/    : READ (simulation)
+  - results/ : READ (simulation)
+  - admin/   : NONE (simulation)
+ANOMALIES DÃ‰TECTÃ‰ES:
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READ'
+
+
+================================================================================
+[2026-01-19 11:20:18] TRAITEMENT
+================================================================================
+Projet        : ProjectA
+Statut projet : ACTIVE
+Utilisateur   : charlie
+RÃ´le effectif : MANAGER
+
+DROITS APPLIQUÃ‰S:
+  - data/    : READ (simulation)
+  - results/ : READ (simulation)
+  - admin/   : NONE (simulation)
+ANOMALIES DÃ‰TECTÃ‰ES:
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READ'
+
+
+================================================================================
+[2026-01-19 11:20:18] TRAITEMENT
+================================================================================
+Projet        : ProjectA
+Statut projet : ACTIVE
+Utilisateur   : eve
+RÃ´le effectif : ANALYST
+
+DROITS APPLIQUÃ‰S:
+  - data/    : READ (simulation)
+  - results/ : READWRITE (simulation)
+  - admin/   : NONE (simulation)
+ANOMALIES DÃ‰TECTÃ‰ES:
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READWRITE'
+
+
+================================================================================
+[2026-01-19 11:20:18] TRAITEMENT
+================================================================================
+Projet        : ProjectA
+Statut projet : ACTIVE
+Utilisateur   : david
+RÃ´le effectif : ADMIN
+
+DROITS APPLIQUÃ‰S:
+  - data/    : FULL (simulation)
+  - results/ : FULL (simulation)
+  - admin/   : FULL (simulation)
+ANOMALIES DÃ‰TECTÃ‰ES:
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+
+
+================================================================================
+[2026-01-19 11:20:19] TRAITEMENT
+================================================================================
+Projet        : ProjectA
+Statut projet : ACTIVE
+Utilisateur   : frank
+RÃ´le effectif : MANAGER
+
+DROITS APPLIQUÃ‰S:
+  - data/    : READ (simulation)
+  - results/ : READ (simulation)
+  - admin/   : NONE (simulation)
+ANOMALIES DÃ‰TECTÃ‰ES:
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READ'
+
+
+================================================================================
+[2026-01-19 11:20:19] TRAITEMENT
+================================================================================
+Projet        : ProjectA
+Statut projet : ACTIVE
+Utilisateur   : alice
+RÃ´le effectif : DEV
+
+DROITS APPLIQUÃ‰S:
+  - data/    : READWRITE (simulation)
+  - results/ : NONE (simulation)
+  - admin/   : NONE (simulation)
+ANOMALIES DÃ‰TECTÃ‰ES:
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READWRITE'
+
+
+================================================================================
+[2026-01-19 11:20:19] TRAITEMENT
+================================================================================
+Projet        : ProjectA
+Statut projet : ACTIVE
+Utilisateur   : henry
+RÃ´le effectif : ADMIN
+
+DROITS APPLIQUÃ‰S:
+  - data/    : FULL (simulation)
+  - results/ : FULL (simulation)
+  - admin/   : FULL (simulation)
+ANOMALIES DÃ‰TECTÃ‰ES:
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+
+
+================================================================================
+[2026-01-19 11:20:19] TRAITEMENT
+================================================================================
+Projet        : ProjectA
+Statut projet : ACTIVE
+Utilisateur   : bob
+RÃ´le effectif : ANALYST
+
+DROITS APPLIQUÃ‰S:
+  - data/    : READ (simulation)
+  - results/ : READWRITE (simulation)
+  - admin/   : NONE (simulation)
+ANOMALIES DÃ‰TECTÃ‰ES:
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READWRITE'
+
+
+================================================================================
+[2026-01-19 11:20:19] TRAITEMENT
+================================================================================
+Projet        : ProjectB
+Statut projet : ACTIVE
+Utilisateur   : grace
+RÃ´le effectif : MANAGER
+
+DROITS APPLIQUÃ‰S:
+  - data/    : READ (simulation)
+  - results/ : READ (simulation)
+  - admin/   : NONE (simulation)
+ANOMALIES DÃ‰TECTÃ‰ES:
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READ'
+
+
+================================================================================
+[2026-01-19 11:20:19] TRAITEMENT
+================================================================================
+Projet        : ProjectB
+Statut projet : ACTIVE
+Utilisateur   : charlie
+RÃ´le effectif : MANAGER
+
+DROITS APPLIQUÃ‰S:
+  - data/    : READ (simulation)
+  - results/ : READ (simulation)
+  - admin/   : NONE (simulation)
+ANOMALIES DÃ‰TECTÃ‰ES:
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READ'
+
+
+================================================================================
+[2026-01-19 11:20:19] TRAITEMENT
+================================================================================
+Projet        : ProjectB
+Statut projet : ACTIVE
+Utilisateur   : eve
+RÃ´le effectif : ANALYST
+
+DROITS APPLIQUÃ‰S:
+  - data/    : READ (simulation)
+  - results/ : READWRITE (simulation)
+  - admin/   : NONE (simulation)
+ANOMALIES DÃ‰TECTÃ‰ES:
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READWRITE'
+
+
+================================================================================
+[2026-01-19 11:20:19] TRAITEMENT
+================================================================================
+Projet        : ProjectB
+Statut projet : ACTIVE
+Utilisateur   : david
+RÃ´le effectif : ADMIN
+
+DROITS APPLIQUÃ‰S:
+  - data/    : FULL (simulation)
+  - results/ : FULL (simulation)
+  - admin/   : FULL (simulation)
+ANOMALIES DÃ‰TECTÃ‰ES:
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+
+
+================================================================================
+[2026-01-19 11:20:19] TRAITEMENT
+================================================================================
+Projet        : ProjectB
+Statut projet : ACTIVE
+Utilisateur   : frank
+RÃ´le effectif : MANAGER
+
+DROITS APPLIQUÃ‰S:
+  - data/    : READ (simulation)
+  - results/ : READ (simulation)
+  - admin/   : NONE (simulation)
+ANOMALIES DÃ‰TECTÃ‰ES:
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READ'
+
+
+================================================================================
+[2026-01-19 11:20:19] TRAITEMENT
+================================================================================
+Projet        : ProjectB
+Statut projet : ACTIVE
+Utilisateur   : alice
+RÃ´le effectif : DEV
+
+DROITS APPLIQUÃ‰S:
+  - data/    : READWRITE (simulation)
+  - results/ : NONE (simulation)
+  - admin/   : NONE (simulation)
+ANOMALIES DÃ‰TECTÃ‰ES:
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READWRITE'
+
+
+================================================================================
+[2026-01-19 11:20:19] TRAITEMENT
+================================================================================
+Projet        : ProjectB
+Statut projet : ACTIVE
+Utilisateur   : henry
+RÃ´le effectif : ADMIN
+
+DROITS APPLIQUÃ‰S:
+  - data/    : FULL (simulation)
+  - results/ : FULL (simulation)
+  - admin/   : FULL (simulation)
+ANOMALIES DÃ‰TECTÃ‰ES:
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+
+
+================================================================================
+[2026-01-19 11:20:19] TRAITEMENT
+================================================================================
+Projet        : ProjectB
+Statut projet : ACTIVE
+Utilisateur   : bob
+RÃ´le effectif : ANALYST
+
+DROITS APPLIQUÃ‰S:
+  - data/    : READ (simulation)
+  - results/ : READWRITE (simulation)
+  - admin/   : NONE (simulation)
+ANOMALIES DÃ‰TECTÃ‰ES:
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READWRITE'
+
+
+================================================================================
+[2026-01-19 11:20:19] TRAITEMENT
+================================================================================
+Projet        : ProjectC
+Statut projet : CLOSED
+Utilisateur   : grace
+RÃ´le effectif : MANAGER
+
+DROITS APPLIQUÃ‰S:
+  - data/    : NONE (simulation)
+  - results/ : READ (simulation)
+  - admin/   : NONE (simulation)
+ANOMALIES DÃ‰TECTÃ‰ES:
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READ'
+
+
+================================================================================
+[2026-01-19 11:20:19] TRAITEMENT
+================================================================================
+Projet        : ProjectC
+Statut projet : CLOSED
+Utilisateur   : charlie
+RÃ´le effectif : MANAGER
+
+DROITS APPLIQUÃ‰S:
+  - data/    : NONE (simulation)
+  - results/ : READ (simulation)
+  - admin/   : NONE (simulation)
+ANOMALIES DÃ‰TECTÃ‰ES:
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READ'
+
+
+================================================================================
+[2026-01-19 11:20:19] TRAITEMENT
+================================================================================
+Projet        : ProjectC
+Statut projet : CLOSED
+Utilisateur   : eve
+RÃ´le effectif : ANALYST
+
+DROITS APPLIQUÃ‰S:
+  - data/    : NONE (simulation)
+  - results/ : NONE (simulation)
+  - admin/   : NONE (simulation)
+ANOMALIES: Aucune
+
+
+================================================================================
+[2026-01-19 11:20:19] TRAITEMENT
+================================================================================
+Projet        : ProjectC
+Statut projet : CLOSED
+Utilisateur   : david
+RÃ´le effectif : ADMIN
+
+DROITS APPLIQUÃ‰S:
+  - data/    : FULL (simulation)
+  - results/ : FULL (simulation)
+  - admin/   : FULL (simulation)
+ANOMALIES DÃ‰TECTÃ‰ES:
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+
+
+================================================================================
+[2026-01-19 11:20:19] TRAITEMENT
+================================================================================
+Projet        : ProjectC
+Statut projet : CLOSED
+Utilisateur   : frank
+RÃ´le effectif : MANAGER
+
+DROITS APPLIQUÃ‰S:
+  - data/    : NONE (simulation)
+  - results/ : READ (simulation)
+  - admin/   : NONE (simulation)
+ANOMALIES DÃ‰TECTÃ‰ES:
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'READ'
+
+
+================================================================================
+[2026-01-19 11:20:19] TRAITEMENT
+================================================================================
+Projet        : ProjectC
+Statut projet : CLOSED
+Utilisateur   : alice
+RÃ´le effectif : DEV
+
+DROITS APPLIQUÃ‰S:
+  - data/    : NONE (simulation)
+  - results/ : NONE (simulation)
+  - admin/   : NONE (simulation)
+ANOMALIES: Aucune
+
+
+================================================================================
+[2026-01-19 11:20:19] TRAITEMENT
+================================================================================
+Projet        : ProjectC
+Statut projet : CLOSED
+Utilisateur   : henry
+RÃ´le effectif : ADMIN
+
+DROITS APPLIQUÃ‰S:
+  - data/    : FULL (simulation)
+  - results/ : FULL (simulation)
+  - admin/   : FULL (simulation)
+ANOMALIES DÃ‰TECTÃ‰ES:
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] MISSING_RIGHTS: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+
+
+================================================================================
+[2026-01-19 11:20:19] TRAITEMENT
+================================================================================
+Projet        : ProjectC
+Statut projet : CLOSED
+Utilisateur   : bob
+RÃ´le effectif : ANALYST
+
+DROITS APPLIQUÃ‰S:
+  - data/    : NONE (simulation)
+  - results/ : NONE (simulation)
+  - admin/   : NONE (simulation)
+ANOMALIES: Aucune
+
+
+
+################################################################################
+#                              RÃ‰SUMÃ‰ DE L'EXÃ‰CUTION                           #
+################################################################################
+
+Projets traitÃ©s      : 3
+Utilisateurs         : 8
+OpÃ©rations totales   : 24
+Anomalies dÃ©tectÃ©es  : 43
+LISTE DES ANOMALIES:
+  [WARNING] ProjectA - grace - data: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] ProjectA - grace - results: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] ProjectA - charlie - data: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] ProjectA - charlie - results: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] ProjectA - eve - data: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] ProjectA - eve - results: Droits insuffisants: a 'NONE' au lieu de 'READWRITE'
+  [WARNING] ProjectA - david - data: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] ProjectA - david - results: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] ProjectA - david - admin: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] ProjectA - frank - data: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] ProjectA - frank - results: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] ProjectA - alice - data: Droits insuffisants: a 'NONE' au lieu de 'READWRITE'
+  [WARNING] ProjectA - henry - data: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] ProjectA - henry - results: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] ProjectA - henry - admin: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] ProjectA - bob - data: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] ProjectA - bob - results: Droits insuffisants: a 'NONE' au lieu de 'READWRITE'
+  [WARNING] ProjectB - grace - data: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] ProjectB - grace - results: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] ProjectB - charlie - data: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] ProjectB - charlie - results: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] ProjectB - eve - data: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] ProjectB - eve - results: Droits insuffisants: a 'NONE' au lieu de 'READWRITE'
+  [WARNING] ProjectB - david - data: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] ProjectB - david - results: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] ProjectB - david - admin: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] ProjectB - frank - data: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] ProjectB - frank - results: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] ProjectB - alice - data: Droits insuffisants: a 'NONE' au lieu de 'READWRITE'
+  [WARNING] ProjectB - henry - data: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] ProjectB - henry - results: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] ProjectB - henry - admin: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] ProjectB - bob - data: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] ProjectB - bob - results: Droits insuffisants: a 'NONE' au lieu de 'READWRITE'
+  [WARNING] ProjectC - grace - results: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] ProjectC - charlie - results: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] ProjectC - david - data: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] ProjectC - david - results: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] ProjectC - david - admin: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] ProjectC - frank - results: Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] ProjectC - henry - data: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] ProjectC - henry - results: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+  [WARNING] ProjectC - henry - admin: Droits insuffisants: a 'NONE' au lieu de 'FULL'
+

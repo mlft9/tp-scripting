@@ -1,0 +1,8 @@
+mathis:DEV
+ridwan:ANALYST
+hugo:MANAGER
+seb:ADMIN
+edouard:DEV,ANALYST
+jm:DEV,MANAGER
+antoine:ANALYST,MANAGER
+maxime:DEV,ANALYST,MANAGER,ADMIN

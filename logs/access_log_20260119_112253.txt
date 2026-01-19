@@ -1,0 +1,209 @@
+################################################################################
+#                    RAPPORT DE GESTION DES DROITS D'ACCÈS                     #
+#                    Date d'exécution: 2026-01-19 11:22:53                      #
+#                    Mode: SIMULATION                                          #
+################################################################################
+
+================================================================================
+[2026-01-19 11:22:54] TRAITEMENT
+================================================================================
+Projet        : ProjectA
+Statut projet : ACTIVE
+Utilisateur   : eve
+Rôle effectif : DEV
+
+DROITS APPLIQUÉS:
+  - data/    : READWRITE (simulation)
+  - results/ : NONE (simulation)
+  - admin/   : NONE (simulation)
+
+ANOMALIES DÉTECTÉES:
+  [WARNING] Droits insuffisants: a 'NONE' au lieu de 'READWRITE'
+
+================================================================================
+[2026-01-19 11:22:54] TRAITEMENT
+================================================================================
+Projet        : ProjectA
+Statut projet : ACTIVE
+Utilisateur   : henry
+Rôle effectif : MANAGER
+
+DROITS APPLIQUÉS:
+  - data/    : READ (simulation)
+  - results/ : READ (simulation)
+  - admin/   : NONE (simulation)
+
+ANOMALIES DÉTECTÉES:
+  [WARNING] Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] Droits insuffisants: a 'NONE' au lieu de 'READ'
+
+================================================================================
+[2026-01-19 11:22:54] TRAITEMENT
+================================================================================
+Projet        : ProjectA
+Statut projet : ACTIVE
+Utilisateur   : frank
+Rôle effectif : DEV
+
+DROITS APPLIQUÉS:
+  - data/    : READWRITE (simulation)
+  - results/ : NONE (simulation)
+  - admin/   : NONE (simulation)
+
+ANOMALIES DÉTECTÉES:
+  [WARNING] Droits insuffisants: a 'NONE' au lieu de 'READWRITE'
+
+================================================================================
+[2026-01-19 11:22:54] TRAITEMENT
+================================================================================
+Projet        : ProjectA
+Statut projet : ACTIVE
+Utilisateur   : grace
+Rôle effectif : ANALYST
+
+DROITS APPLIQUÉS:
+  - data/    : READ (simulation)
+  - results/ : READWRITE (simulation)
+  - admin/   : NONE (simulation)
+
+ANOMALIES DÉTECTÉES:
+  [WARNING] Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] Droits insuffisants: a 'NONE' au lieu de 'READWRITE'
+
+================================================================================
+[2026-01-19 11:22:55] TRAITEMENT
+================================================================================
+Projet        : ProjectB
+Statut projet : ACTIVE
+Utilisateur   : eve
+Rôle effectif : DEV
+
+DROITS APPLIQUÉS:
+  - data/    : READWRITE (simulation)
+  - results/ : NONE (simulation)
+  - admin/   : NONE (simulation)
+
+ANOMALIES DÉTECTÉES:
+  [WARNING] Droits insuffisants: a 'NONE' au lieu de 'READWRITE'
+
+================================================================================
+[2026-01-19 11:22:55] TRAITEMENT
+================================================================================
+Projet        : ProjectB
+Statut projet : ACTIVE
+Utilisateur   : henry
+Rôle effectif : MANAGER
+
+DROITS APPLIQUÉS:
+  - data/    : READ (simulation)
+  - results/ : READ (simulation)
+  - admin/   : NONE (simulation)
+
+ANOMALIES DÉTECTÉES:
+  [WARNING] Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] Droits insuffisants: a 'NONE' au lieu de 'READ'
+
+================================================================================
+[2026-01-19 11:22:55] TRAITEMENT
+================================================================================
+Projet        : ProjectB
+Statut projet : ACTIVE
+Utilisateur   : frank
+Rôle effectif : DEV
+
+DROITS APPLIQUÉS:
+  - data/    : READWRITE (simulation)
+  - results/ : NONE (simulation)
+  - admin/   : NONE (simulation)
+
+ANOMALIES DÉTECTÉES:
+  [WARNING] Droits insuffisants: a 'NONE' au lieu de 'READWRITE'
+
+================================================================================
+[2026-01-19 11:22:55] TRAITEMENT
+================================================================================
+Projet        : ProjectB
+Statut projet : ACTIVE
+Utilisateur   : grace
+Rôle effectif : ANALYST
+
+DROITS APPLIQUÉS:
+  - data/    : READ (simulation)
+  - results/ : READWRITE (simulation)
+  - admin/   : NONE (simulation)
+
+ANOMALIES DÉTECTÉES:
+  [WARNING] Droits insuffisants: a 'NONE' au lieu de 'READ'
+  [WARNING] Droits insuffisants: a 'NONE' au lieu de 'READWRITE'
+
+================================================================================
+[2026-01-19 11:22:56] TRAITEMENT
+================================================================================
+Projet        : ProjectC
+Statut projet : CLOSED
+Utilisateur   : eve
+Rôle effectif : DEV
+
+DROITS APPLIQUÉS:
+  - data/    : NONE (simulation)
+  - results/ : NONE (simulation)
+  - admin/   : NONE (simulation)
+
+ANOMALIES: Aucune
+
+================================================================================
+[2026-01-19 11:22:56] TRAITEMENT
+================================================================================
+Projet        : ProjectC
+Statut projet : CLOSED
+Utilisateur   : henry
+Rôle effectif : MANAGER
+
+DROITS APPLIQUÉS:
+  - data/    : NONE (simulation)
+  - results/ : READ (simulation)
+  - admin/   : NONE (simulation)
+
+ANOMALIES DÉTECTÉES:
+  [WARNING] Droits insuffisants: a 'NONE' au lieu de 'READ'
+
+================================================================================
+[2026-01-19 11:22:56] TRAITEMENT
+================================================================================
+Projet        : ProjectC
+Statut projet : CLOSED
+Utilisateur   : frank
+Rôle effectif : DEV
+
+DROITS APPLIQUÉS:
+  - data/    : NONE (simulation)
+  - results/ : NONE (simulation)
+  - admin/   : NONE (simulation)
+
+ANOMALIES: Aucune
+
+================================================================================
+[2026-01-19 11:22:56] TRAITEMENT
+================================================================================
+Projet        : ProjectC
+Statut projet : CLOSED
+Utilisateur   : grace
+Rôle effectif : ANALYST
+
+DROITS APPLIQUÉS:
+  - data/    : NONE (simulation)
+  - results/ : NONE (simulation)
+  - admin/   : NONE (simulation)
+
+ANOMALIES: Aucune
+
+
+################################################################################
+#                              RÉSUMÉ DE L'EXÉCUTION                           #
+################################################################################
+
+Projets traités      : 3
+Utilisateurs         : 8
+Opérations totales   : 12
+Anomalies détectées  : 0
+
