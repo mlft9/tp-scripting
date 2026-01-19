@@ -2,14 +2,9 @@
 # SCRIPT DE GESTION DES DROITS D'ACCES - VERSION SIMPLIFIEE
 
 # CONFIGURATION DE BASE
-# Chemin vers le dossier des projets (a adapter)
-DOSSIER_PROJETS="./projects"
-
-# Chemin vers le fichier des utilisateurs
-FICHIER_UTILISATEURS="./users_roles.txt"
-
-# Dossier pour les logs
-DOSSIER_LOGS="./logs"
+DOSSIER_PROJETS="/home/debian/projects"
+FICHIER_UTILISATEURS="/home/debian/users_roles.txt"
+DOSSIER_LOGS="/home/debian/logs"
 
 # Nom du fichier log avec date et heure
 DATE_HEURE=$(date +"%Y%m%d_%H%M%S")
