@@ -64,6 +64,7 @@ for projet in "$PROJETS"/*/; do
         [ -z "$user" ] && continue
         roles=$(echo "$roles" | tr -d '\r' | tr a-z A-Z)
         role=$(role_max "$roles")
+        # recup valeur droit
         read d r a <<< $(droits "$role" "$statut")
         
         log "  $user [$role] -> data:$d results:$r admin:$a"
