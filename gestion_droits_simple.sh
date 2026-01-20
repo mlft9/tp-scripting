@@ -53,6 +53,7 @@ log "GESTION DROITS - $(date)"
 for projet in "$PROJETS"/*/; do
     nom=$(basename "$projet")
     statut=$(head -n1 "$projet/project_status.txt" 2>/dev/null | tr -d '\r' | tr a-z A-Z)
+    # si vide
     [ -z "$statut" ] && continue
     
     log ""
