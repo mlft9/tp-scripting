@@ -56,20 +56,20 @@ Le script génère un fichier log avec :
 ```
 DEBUT
 
-# Configuration
+# configuration
 DOSSIER_PROJETS = "./projects"
 FICHIER_UTILISATEURS = "./users_roles.txt"
 DOSSIER_LOGS = "./logs"
 
-# Creer dossier logs si besoin
+# creer dossier logs si besoin
 Creer dossier DOSSIER_LOGS
 
-# Afficher en-tete
+# afficher en-tete
 Ecrire "GESTION DES DROITS D'ACCES"
 Ecrire "Date : " + date actuelle
 Ecrire "Mode : SIMULATION"
 
-# ETAPE 1 : Lire les utilisateurs
+# etape 1 : lire les utilisateurs
 Ecrire "LECTURE DES UTILISATEURS"
 
 Si FICHIER_UTILISATEURS n'existe pas:
@@ -83,14 +83,14 @@ Pour chaque ligne dans FICHIER_UTILISATEURS:
     Ecrire "Utilisateur: " + nom + " - Roles: " + roles
 Fin Pour
 
-# ETAPE 2 : Parcourir les projets
+# etape 2 : parcourir les projets
 Ecrire "TRAITEMENT DES PROJETS"
 
 Pour chaque dossier dans DOSSIER_PROJETS:
     nom_projet = nom du dossier
     Ecrire "PROJET : " + nom_projet
 
-    # Lire le statut
+    # lire le statut
     Si project_status.txt n'existe pas:
         Ecrire "ATTENTION : Pas de fichier project_status.txt"
         Continuer au projet suivant
@@ -99,12 +99,12 @@ Pour chaque dossier dans DOSSIER_PROJETS:
     statut = lire premiere ligne de project_status.txt
     Ecrire "Statut : " + statut
 
-    # ETAPE 3 : Traiter chaque utilisateur
+    # etape 3 : traiter chaque utilisateur
     Pour chaque ligne dans FICHIER_UTILISATEURS:
         nom = partie avant ":"
         roles = partie apres ":"
 
-        # Trouver role effectif (le plus eleve)
+        # trouver role effectif (le plus eleve)
         meilleur_role = "DEV"
         meilleur_niveau = 0
 
@@ -120,7 +120,7 @@ Pour chaque dossier dans DOSSIER_PROJETS:
             Fin Si
         Fin Pour
 
-        # Calculer les droits
+        # calculer droits
         droit_data = "AUCUN"
         droit_results = "AUCUN"
         droit_admin = "AUCUN"
@@ -153,7 +153,7 @@ Pour chaque dossier dans DOSSIER_PROJETS:
                 droit_admin = "COMPLET"
         Fin Si
 
-        # Afficher resultats
+        # afficher resultats
         Ecrire "Utilisateur : " + nom
         Ecrire "Role effectif : " + meilleur_role
         Ecrire "Droits simules :"
@@ -164,7 +164,7 @@ Pour chaque dossier dans DOSSIER_PROJETS:
     Fin Pour
 Fin Pour
 
-# Fin
+# fin
 Ecrire "FIN DU TRAITEMENT"
 Ecrire "Log sauvegarde dans : " + FICHIER_LOG
 
