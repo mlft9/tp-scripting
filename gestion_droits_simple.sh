@@ -1,40 +1,38 @@
 #!/bin/bash
-# SCRIPT DE GESTION DES DROITS D'ACCES - VERSION SIMPLIFIEE
-
-# CONFIGURATION DE BASE
+# configuration
 DOSSIER_PROJETS="/home/debian/projects"
 FICHIER_UTILISATEURS="/home/debian/users_roles.txt"
 DOSSIER_LOGS="/home/debian/logs"
 
-# Nom du fichier log avec date et heure
+# nom fichier log avec date et heure
 DATE_HEURE=$(date +"%Y%m%d_%H%M%S")
 FICHIER_LOG="$DOSSIER_LOGS/log_$DATE_HEURE.txt"
 
-# FONCTION POUR ECRIRE DANS LE LOG
+# fonction ecrire log
 ecrire_log() {
     message="$1"
-    # Afficher a l'ecran
+    # afficher a l'ecran
     echo "$message"
-    # Ecrire dans le fichier
+    # ecrire dans le fichier
     echo "$message" >> "$FICHIER_LOG"
 }
 
-# FONCTION POUR TROUVER LE ROLE LE PLUS ELEVE
-# Ordre : ADMIN (4) > MANAGER (3) > ANALYST (2) > DEV (1)
+# fonction trouver role effectif
+# ordre : admin > manager > analyst > dev
 trouver_role_effectif() {
     roles="$1"
     
     meilleur_role="DEV"
     meilleur_niveau=0
     
-    # Separer les roles par virgule
+    # separer roles par virgule
     IFS=',' read -ra liste_roles <<< "$roles"
     
     for role in "${liste_roles[@]}"; do
-        # Nettoyer et mettre en majuscules
+        # nettoyer et mettre en majuscules
         role=$(echo "$role" | tr -d ' ' | tr '[:lower:]' '[:upper:]')
         
-        # Determiner le niveau
+        # determiner niveau
         niveau=0
         case "$role" in
             "DEV")     niveau=1 ;;
@@ -43,7 +41,7 @@ trouver_role_effectif() {
             "ADMIN")   niveau=4 ;;
         esac
         
-        # Garder le plus eleve
+        # garder le plus eleve
         if [ $niveau -gt $meilleur_niveau ]; then
             meilleur_niveau=$niveau
             meilleur_role=$role
@@ -53,19 +51,19 @@ trouver_role_effectif() {
     echo "$meilleur_role"
 }
 
-# FONCTION POUR CALCULER LES DROITS
-# Arguments: $1 = role, $2 = statut du projet
-# Resultat: affiche les droits pour data, results, admin
+# fonction calculer droits
+# arguments : $1 = role, $2 = statut du projet
+# resultat : affiche les droits pour data, results, admin
 calculer_droits() {
     role="$1"
     statut="$2"
     
-    # Par defaut : aucun acces
+    # par defaut : aucun acces
     droit_data="AUCUN"
     droit_results="AUCUN"
     droit_admin="AUCUN"
     
-    # Si le projet est ACTIF
+    # si le projet est actif
     if [ "$statut" = "ACTIVE" ]; then
         case "$role" in
             "DEV")
@@ -86,14 +84,14 @@ calculer_droits() {
                 ;;
         esac
     
-    # Si le projet est FERME
+    # si le projet est ferme
     elif [ "$statut" = "CLOSED" ]; then
         case "$role" in
             "DEV")
-                # Aucun acces
+                # aucun acces
                 ;;
             "ANALYST")
-                # Aucun acces
+                # aucun acces
                 ;;
             "MANAGER")
                 droit_results="LECTURE"
@@ -106,12 +104,12 @@ calculer_droits() {
         esac
     fi
     
-    # Retourner les 3 droits separes par des espaces
+    # retourner les 3 droits separes par des espaces
     echo "$droit_data $droit_results $droit_admin"
 }
 
-# DEBUT DU SCRIPT PRINCIPAL
-# Creer le dossier logs s'il n'existe pas
+# debut
+# creer dossier logs
 mkdir -p "$DOSSIER_LOGS"
 
 # Afficher l'en-tete
@@ -120,7 +118,7 @@ ecrire_log "   Date : $(date '+%d/%m/%Y %H:%M:%S')"
 ecrire_log "   Mode : SIMULATION"
 ecrire_log ""
 
-# ETAPE 1 : Verifier le fichier utilisateurs
+# etape 1 verifier fichier utilisateurs
 ecrire_log "LECTURE DES UTILISATEURS"
 
 if [ ! -f "$FICHIER_UTILISATEURS" ]; then
@@ -128,15 +126,15 @@ if [ ! -f "$FICHIER_UTILISATEURS" ]; then
     exit 1
 fi
 
-# Lire et afficher les utilisateurs
+# lire et afficher les utilisateurs
 while IFS= read -r ligne || [ -n "$ligne" ]; do
-    # Ignorer les lignes vides
+    # ignorer les lignes vides
     [ -z "$ligne" ] && continue
     
-    # Nettoyer la ligne (enlever les retours chariot Windows)
+    # nettoyer la ligne
     ligne=$(echo "$ligne" | tr -d '\r')
     
-    # Separer nom:roles
+    # separer nom:roles
     nom_utilisateur=$(echo "$ligne" | cut -d':' -f1)
     roles=$(echo "$ligne" | cut -d':' -f2)
     
@@ -146,18 +144,18 @@ done < "$FICHIER_UTILISATEURS"
 
 ecrire_log ""
 
-# ETAPE 2 : Parcourir les projets
+# etape 2 parcourir projets
 ecrire_log "TRAITEMENT DES PROJETS"
 
-# Pour chaque dossier dans /projects
+# pour chaque dossier dans /projects
 for dossier_projet in "$DOSSIER_PROJETS"/*/; do
-    # Extraire le nom du projet
+    # extraire nom du projet
     nom_projet=$(basename "$dossier_projet")
     
     ecrire_log ""
     ecrire_log "PROJET : $nom_projet"
     
-    # Lire le statut du projet
+    # lire statut du projet
     fichier_statut="$dossier_projet/project_status.txt"
     
     if [ ! -f "$fichier_statut" ]; then
@@ -165,32 +163,32 @@ for dossier_projet in "$DOSSIER_PROJETS"/*/; do
         continue
     fi
     
-    # Lire la premiere ligne et nettoyer
+    # lire premiere ligne et nettoyer
     statut=$(head -n 1 "$fichier_statut" | tr -d '\r' | tr '[:lower:]' '[:upper:]')
     ecrire_log "  Statut : $statut"
     
-        # ETAPE 3 : Traiter chaque utilisateur
-        while IFS= read -r ligne || [ -n "$ligne" ]; do
-        # Ignorer les lignes vides
+    # etape 3 : traiter chaque utilisateur
+    while IFS= read -r ligne || [ -n "$ligne" ]; do
+        # ignorer lignes vides
         [ -z "$ligne" ] && continue
         
-        # Nettoyer la ligne
+        # nettoyer la ligne
         ligne=$(echo "$ligne" | tr -d '\r')
         
-        # Separer nom:roles
+        # separer nom:roles
         nom_utilisateur=$(echo "$ligne" | cut -d':' -f1)
         roles=$(echo "$ligne" | cut -d':' -f2)
         
-        # Trouver le role effectif
+        # trouver role effectif
         role_effectif=$(trouver_role_effectif "$roles")
         
-        # Calculer les droits
+        # calculer droits
         resultat=$(calculer_droits "$role_effectif" "$statut")
         droit_data=$(echo "$resultat" | cut -d' ' -f1)
         droit_results=$(echo "$resultat" | cut -d' ' -f2)
         droit_admin=$(echo "$resultat" | cut -d' ' -f3)
         
-        # Afficher les resultats
+        # afficher resultats
         ecrire_log ""
         ecrire_log "  Utilisateur : $nom_utilisateur"
         ecrire_log "  Role effectif : $role_effectif"
@@ -202,7 +200,7 @@ for dossier_projet in "$DOSSIER_PROJETS"/*/; do
     done < "$FICHIER_UTILISATEURS"
 done
 
-# FIN DU SCRIPT
+# fin 
 ecrire_log ""
 ecrire_log "FIN DU TRAITEMENT"
 ecrire_log "Log sauvegarde dans : $FICHIER_LOG"
