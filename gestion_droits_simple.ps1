@@ -1,7 +1,7 @@
 # conf
-$PROJETS = "C:\projects"
-$USERS = "C:\users_roles.txt"
-$LOG = "C:\logs\log_$(Get-Date -Format 'yyyyMMdd_HHmmss').txt"
+$PROJETS = "D:\Documents\Cours\sctipting\TP6_Access_Rights\projects"
+$USERS = "D:\Documents\Cours\sctipting\TP6_Access_Rights\users_roles.txt"
+$LOG = "D:\Documents\Cours\sctipting\TP6_Access_Rights\logs\log_$(Get-Date -Format 'yyyyMMdd_HHmmss').txt"
 
 # creer dossier logs
 New-Item -ItemType Directory -Force -Path "C:\logs" | Out-Null
