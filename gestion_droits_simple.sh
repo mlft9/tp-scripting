@@ -61,6 +61,7 @@ for projet in "$PROJETS"/*/; do
     
     # pour chaque utilisateur
     while IFS=: read -r user roles; do
+        #ignore vide
         [ -z "$user" ] && continue
         roles=$(echo "$roles" | tr -d '\r' | tr a-z A-Z)
         role=$(role_max "$roles")
