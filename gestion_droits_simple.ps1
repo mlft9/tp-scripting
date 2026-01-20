@@ -61,7 +61,7 @@ Get-ChildItem -Path $PROJETS -Directory | ForEach-Object {
     if (Test-Path $statusFile) {
         $statut = (Get-Content $statusFile -First 1).Trim().ToUpper()
     } else {
-        return  # continue dans ForEach-Object
+        return  # continue dans foreach
     }
     
     # si vide
