@@ -1,11 +1,13 @@
 #!/bin/bash
-# conf
-PROJETS="/home/debian/projects"
-USERS="/home/debian/users_roles.txt"
-LOG="/home/debian/logs/log_$(date +%Y%m%d_%H%M%S).txt"
+# conf - chemins relatifs au script
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJETS="$SCRIPT_DIR/projects"
+USERS="$SCRIPT_DIR/users_roles.txt"
+LOGS_DIR="$SCRIPT_DIR/logs"
+LOG="$LOGS_DIR/log_$(date +%Y%m%d_%H%M%S).txt"
 
 # creer dossier logs
-mkdir -p /home/debian/logs
+mkdir -p "$LOGS_DIR"
 
 # fonction ecrire log
 log() {

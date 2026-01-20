@@ -1,10 +1,11 @@
-# conf
-$PROJETS = "D:\Documents\Cours\sctipting\TP6_Access_Rights\projects"
-$USERS = "D:\Documents\Cours\sctipting\TP6_Access_Rights\users_roles.txt"
-$LOG = "D:\Documents\Cours\sctipting\TP6_Access_Rights\logs\log_$(Get-Date -Format 'yyyyMMdd_HHmmss').txt"
+# conf - chemins relatifs au script
+$PROJETS = Join-Path $PSScriptRoot "projects"
+$USERS = Join-Path $PSScriptRoot "users_roles.txt"
+$LOGS_DIR = Join-Path $PSScriptRoot "logs"
+$LOG = Join-Path $LOGS_DIR "log_$(Get-Date -Format 'yyyyMMdd_HHmmss').txt"
 
 # creer dossier logs
-New-Item -ItemType Directory -Force -Path "C:\logs" | Out-Null
+New-Item -ItemType Directory -Force -Path $LOGS_DIR | Out-Null
 
 # fonction ecrire log
 function Log {
