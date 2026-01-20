@@ -24,6 +24,7 @@ role_max() {
 # fonction calculer droits
 droits() {
     local role="$1" statut="$2"
+    # d=data, r=resultats, a=admin
     local d="AUCUN" r="AUCUN" a="AUCUN"
     
     if [ "$statut" = "ACTIVE" ]; then
