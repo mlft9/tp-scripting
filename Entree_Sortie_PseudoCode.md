@@ -12,7 +12,6 @@
 | `users_roles.txt`                   | Liste des utilisateurs et leurs rôles |
 | `projects/<nom>/project_status.txt` | État du projet : ACTIVE ou CLOSED     |
 
-
 **Hiérarchie des rôles :**
 
 ```
@@ -57,116 +56,63 @@ Le script génère un fichier log avec :
 DEBUT
 
 # configuration
-DOSSIER_PROJETS = "./projects"
-FICHIER_UTILISATEURS = "./users_roles.txt"
-DOSSIER_LOGS = "./logs"
+PROJETS = "/home/debian/projects"
+USERS = "/home/debian/users_roles.txt"
+LOG = "/home/debian/logs/log_<date>.txt"
 
-# creer dossier logs si besoin
-Creer dossier DOSSIER_LOGS
+Creer dossier logs
 
-# afficher en-tete
-Ecrire "GESTION DES DROITS D'ACCES"
-Ecrire "Date : " + date actuelle
-Ecrire "Mode : SIMULATION"
+# fonction log : affiche ET ecrit dans fichier
+FONCTION log(message):
+    Afficher message
+    Ecrire message dans LOG
 
-# etape 1 : lire les utilisateurs
-Ecrire "LECTURE DES UTILISATEURS"
+# fonction role_max : trouve le role le plus eleve
+FONCTION role_max(roles):
+    max = "DEV"
+    Si roles contient "ANALYST" : max = "ANALYST"
+    Si roles contient "MANAGER" : max = "MANAGER"
+    Si roles contient "ADMIN"   : max = "ADMIN"
+    Retourner max
 
-Si FICHIER_UTILISATEURS n'existe pas:
-    Ecrire "ERREUR : Fichier introuvable"
+# fonction droits : calcule les droits selon role et statut
+FONCTION droits(role, statut):
+    d = "AUCUN", r = "AUCUN", a = "AUCUN"
+
+    Si statut = "ACTIVE":
+        Si role = "DEV"     : d = "LECTURE_ECRITURE"
+        Si role = "ANALYST" : d = "LECTURE", r = "LECTURE_ECRITURE"
+        Si role = "MANAGER" : d = "LECTURE", r = "LECTURE"
+        Si role = "ADMIN"   : d = "COMPLET", r = "COMPLET", a = "COMPLET"
+    Sinon (CLOSED):
+        Si role = "MANAGER" : r = "LECTURE"
+        Si role = "ADMIN"   : d = "COMPLET", r = "COMPLET", a = "COMPLET"
+
+    Retourner d, r, a
+
+# programme principal
+log("GESTION DROITS - " + date)
+
+Si USERS n'existe pas:
+    log("ERREUR: fichier introuvable")
     Quitter
 
-Pour chaque ligne dans FICHIER_UTILISATEURS:
-    Si ligne vide: continuer
-    nom = partie avant ":"
-    roles = partie apres ":"
-    Ecrire "Utilisateur: " + nom + " - Roles: " + roles
-Fin Pour
+Pour chaque projet dans PROJETS:
+    nom = nom du dossier
+    statut = lire project_status.txt (en majuscules)
+    Si statut vide: passer au suivant
 
-# etape 2 : parcourir les projets
-Ecrire "TRAITEMENT DES PROJETS"
+    log("PROJET: " + nom + " (" + statut + ")")
 
-Pour chaque dossier dans DOSSIER_PROJETS:
-    nom_projet = nom du dossier
-    Ecrire "PROJET : " + nom_projet
-
-    # lire le statut
-    Si project_status.txt n'existe pas:
-        Ecrire "ATTENTION : Pas de fichier project_status.txt"
-        Continuer au projet suivant
-    Fin Si
-
-    statut = lire premiere ligne de project_status.txt
-    Ecrire "Statut : " + statut
-
-    # etape 3 : traiter chaque utilisateur
-    Pour chaque ligne dans FICHIER_UTILISATEURS:
-        nom = partie avant ":"
-        roles = partie apres ":"
-
-        # trouver role effectif (le plus eleve)
-        meilleur_role = "DEV"
-        meilleur_niveau = 0
-
-        Pour chaque role dans roles:
-            Si role = "DEV"     alors niveau = 1
-            Si role = "ANALYST" alors niveau = 2
-            Si role = "MANAGER" alors niveau = 3
-            Si role = "ADMIN"   alors niveau = 4
-
-            Si niveau > meilleur_niveau:
-                meilleur_niveau = niveau
-                meilleur_role = role
-            Fin Si
-        Fin Pour
-
-        # calculer droits
-        droit_data = "AUCUN"
-        droit_results = "AUCUN"
-        droit_admin = "AUCUN"
-
-        Si statut = "ACTIVE":
-            Si meilleur_role = "DEV":
-                droit_data = "LECTURE_ECRITURE"
-            Si meilleur_role = "ANALYST":
-                droit_data = "LECTURE"
-                droit_results = "LECTURE_ECRITURE"
-            Si meilleur_role = "MANAGER":
-                droit_data = "LECTURE"
-                droit_results = "LECTURE"
-            Si meilleur_role = "ADMIN":
-                droit_data = "COMPLET"
-                droit_results = "COMPLET"
-                droit_admin = "COMPLET"
-        Fin Si
-
-        Si statut = "CLOSED":
-            Si meilleur_role = "DEV":
-                (aucun acces)
-            Si meilleur_role = "ANALYST":
-                (aucun acces)
-            Si meilleur_role = "MANAGER":
-                droit_results = "LECTURE"
-            Si meilleur_role = "ADMIN":
-                droit_data = "COMPLET"
-                droit_results = "COMPLET"
-                droit_admin = "COMPLET"
-        Fin Si
-
-        # afficher resultats
-        Ecrire "Utilisateur : " + nom
-        Ecrire "Role effectif : " + meilleur_role
-        Ecrire "Droits simules :"
-        Ecrire "  - data/    : " + droit_data
-        Ecrire "  - results/ : " + droit_results
-        Ecrire "  - admin/   : " + droit_admin
-
+    Pour chaque ligne (user:roles) dans USERS:
+        Si user vide: continuer
+        role = role_max(roles)
+        d, r, a = droits(role, statut)
+        log("  " + user + " [" + role + "] -> data:" + d + " results:" + r + " admin:" + a)
     Fin Pour
 Fin Pour
 
-# fin
-Ecrire "FIN DU TRAITEMENT"
-Ecrire "Log sauvegarde dans : " + FICHIER_LOG
+log("FIN")
 
 FIN
 ```
